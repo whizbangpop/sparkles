@@ -128,3 +128,11 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+discord/config.yaml
+dist/discord/config.yaml
+
+.idea/
+.vscode/
+logs/
+/config.toml

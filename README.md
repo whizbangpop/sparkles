@@ -58,4 +58,25 @@ Any questions or concerns can be sent to [data.protection@sparklesbot.cc](mailto
 ### Server Admin ToS
 By adding sparkles! to your Discord server, and subsequently agreeing to these terms, you agree to the following:
 * We reserve the right to revoke access to sparkle! following detection or abuse of the system
-* 
+
+# Tech Specs
+
+Because it's fun, here's a rundown of the tech that we use to make sparkles! work. And no, we're not leaking sensitive
+data - sparkles! is open source. We use the same code you see, bar the subscription system as we keep that private for
+what should be obvious reasons.
+
+## Core Libraries
+
+To power the Discord bot, we use the infamous **discord.js** library. Even with a lot of it's heftieness, it's an
+incredibly powerful tool, and allows many of the features found to work.
+
+sparkles! is heavily inspired by my TSAB project - some code is reused and updated, some code is just inspired by it,
+but the majority of code is totally unique to sparkles!
+
+## Database(s)
+
+| Database | Info & Fun Facts                                                                                                                                                              |
+|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Redis    | We use Redis as an ingest database because of the fact it stores data in RAM, rather than hard disk. This was also the first database that was fully implemented in sparkles! |
+| MongoDB  | MongoDB is used to store user & guild data, as well as things like encryption keys and preferences.                                                                           |
+| MySQL    | MySQL was chosen as a lightweight, but relativley powerful database, capable of storing all of the messages that sparkles! stores.                                            |
