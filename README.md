@@ -65,13 +65,13 @@ Because it's fun, here's a rundown of the tech that we use to make sparkles! wor
 data - sparkles! is open source. We use the same code you see, bar the subscription system as we keep that private for
 what should be obvious reasons.
 
-## Core Libraries
+## Core Libraries & Attributions
 
 To power the Discord bot, we use the infamous **discord.js** library. Even with a lot of it's heftieness, it's an
 incredibly powerful tool, and allows many of the features found to work.
 
-sparkles! is heavily inspired by my TSAB project - some code is reused and updated, some code is just inspired by it,
-but the majority of code is totally unique to sparkles!
+Some code found within sprakles! is licenced from my other project TSAB, which is released under the AGPL 2.0 license.
+Certain restrictions may apply.
 
 ## Database(s)
 
@@ -80,3 +80,11 @@ but the majority of code is totally unique to sparkles!
 | Redis    | We use Redis as an ingest database because of the fact it stores data in RAM, rather than hard disk. This was also the first database that was fully implemented in sparkles! |
 | MongoDB  | MongoDB is used to store user & guild data, as well as things like encryption keys and preferences.                                                                           |
 | MySQL    | MySQL was chosen as a lightweight, but relativley powerful database, capable of storing all of the messages that sparkles! stores.                                            |
+
+## Encrpytion
+
+For full transparency, all messages stored using our keys use the following key:
+
+```bash
+
+```
