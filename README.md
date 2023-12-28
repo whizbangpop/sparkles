@@ -1,5 +1,7 @@
 sparkles! ✨ - The Penultimate Roleplay Backup Bot
 
+(C) Abigail Henderson & contributors 2023
+
 ## Why?
 Because when a friend of mine nearly deleted an entire roleplay, I wanted to make sure that no more were ever lost again. So, I started a line of bots - of which sparkles! is the latest and greatest.
 
