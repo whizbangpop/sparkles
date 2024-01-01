@@ -20,6 +20,7 @@
   "homepage": "https://github.com/whizbangpop/sparkles#readme",
   "dependencies": {
     "@discordjs/rest": "^2.2.0",
+    "@iarna/toml": "^2.2.5",
     "@types/jest": "^29.5.11",
     "@types/node-rsa": "^1.1.4",
     "@types/winston-syslog": "^2.4.3",

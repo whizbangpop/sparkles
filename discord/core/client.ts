@@ -1,6 +1,5 @@
 import {Client, Events, GatewayIntentBits, Routes} from "discord.js";
 import {CreateLogger} from "../../utilities/createLogger";
-import LoadConfig from "../../utilities/configLoader";
 import {createClient} from "redis";
 
 import CommandHandler from "./listeners/CommandHandler";
@@ -20,7 +19,7 @@ const ClientApp = new Client({
 });
 
 const ClientLogger = CreateLogger("discord", "client");
-const Config = LoadConfig();
+import Config from '../../utilities/configLoader';
 
 ClientApp.once(Events.ClientReady, async (readyClient) => {
     ClientLogger.info(`Logged in as ${readyClient.user.tag} (${readyClient.user.id})`);

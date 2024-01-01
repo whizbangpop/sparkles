@@ -1,12 +1,11 @@
 import {Command} from "../core/interfaces/Command";
 import {SlashCommandBuilder} from "@discordjs/builders";
 import {generateRSAKeys, loadPublicKey} from "../rp_proxy/EncryptionKeys/KeyHandler";
-import {ChatInputCommandInteraction, Client, EmbedBuilder} from "discord.js";
+import {ChatInputCommandInteraction, EmbedBuilder} from "discord.js";
 import path from "path";
 import fs from "fs";
 import axios from "axios";
 import {CreateLogger} from "../../utilities/createLogger";
-import {CommandList} from "./_CommandList";
 
 const FormData = require('form-data');
 
@@ -27,7 +26,7 @@ export const GenerateKeys: Command = {
 
         const Keys = loadPublicKey(Context.guild!.id);
 
-        if (Keys) return await Context.reply({content: `Keys already generated`});
+        if (Keys) return await Context.followUp({content: `Oops! You have already generated encryption keys for this server.`});
         if (!Keys) {
             const Embed1 = new EmbedBuilder()
             Embed1.setTitle("Server Encryption Keys")

@@ -1,11 +1,8 @@
 import {ShardingManager} from "discord.js";
 import {CreateLogger} from "../../utilities/createLogger";
-import LoadConfig from "../../utilities/configLoader";
+import Config from '../../utilities/configLoader';
 
 const Logger = CreateLogger("discord", "sharding");
-
-const Config = LoadConfig();
-
 const ShardManager = new ShardingManager("./dist/discord/core/client.js", {token: Config.Discord.Token});
 
 // @ts-expect-error DiscordJS does not ship correct types for ShardManager
