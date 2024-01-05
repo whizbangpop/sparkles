@@ -11,13 +11,6 @@ export function CreateLogger(parentName: string, moduleName: string) {
 		level: "debug"
 	});
 
-	// const papertrail = new winston.transports.Http({
-	//     host: 'logs.collector.solarwinds.com',
-	//     path: '/v1/log',
-	//     auth: { username: String(""), password: "NQ7JXg7ZRqLRPESkp9mLLCZP41rI" },
-	//     ssl: true,
-	// });
-
 	const logger = winston.createLogger({
 		// level: "debug",
 		transports: [

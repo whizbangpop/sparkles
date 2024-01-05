@@ -1,11 +1,16 @@
 import {Client, Events, GatewayIntentBits, Routes} from "discord.js";
 import {CreateLogger} from "../../utilities/createLogger";
 import {createClient} from "redis";
+import {ToadScheduler, Task, SimpleIntervalJob} from "toad-scheduler";
+import axios from "axios";
 
 import CommandHandler from "./listeners/CommandHandler";
 import MessageWatcher from "../rp_proxy/MessageWatcher";
 import {REST} from "@discordjs/rest";
 import {CommandList} from "../commands/_CommandList";
+import { Cleanup } from "../../utilities/Cleanup";
+
+process.stdin.resume()
 
 const ClientApp = new Client({
     intents: [
@@ -20,8 +25,11 @@ const ClientApp = new Client({
 
 const ClientLogger = CreateLogger("discord", "client");
 import Config from '../../utilities/configLoader';
+const Schedule = new ToadScheduler();
 
 ClientApp.once(Events.ClientReady, async (readyClient) => {
+    Schedule.stop();
+
     ClientLogger.info(`Logged in as ${readyClient.user.tag} (${readyClient.user.id})`);
     ClientApp.user!.setPresence({activities: [{name: "with messages!"}]});
 
@@ -31,6 +39,11 @@ ClientApp.once(Events.ClientReady, async (readyClient) => {
     const CommandData = CommandList.map((Command) => Command.data.toJSON());
     await Rest.put(Routes.applicationCommands(ClientApp.user?.id || "missing id"), {body: CommandData});
 });
+
+ClientApp.on(Events.Error, async (ClientError) => {
+    Schedule.stop();
+    ClientLogger.error(ClientError);
+})
 
 CommandHandler(ClientApp);
 MessageWatcher(ClientApp);
@@ -46,3 +59,13 @@ async function TestRedisStatus() {
 }
 
 ClientApp.login(Config.Discord.Token);
+
+Cleanup(ScheduleClean);
+function ScheduleClean() {
+    ClientLogger.debug('Cleaning scheduler');
+    Schedule.stop();
+}
+
+const HeartbeatTask = new Task("oneuptime heartbeat", async () => { await axios.get("https://oneuptime.com/heartbeat/f051612b-d9af-4aa2-b232-05468bdf68e5") });
+const HeartbeatJob = new SimpleIntervalJob({ minutes: 5}, HeartbeatTask);
+Schedule.addSimpleIntervalJob(HeartbeatJob);
