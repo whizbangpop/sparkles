@@ -1,0 +1,3 @@
+# About sparkles! User Guide
+
+Start typing here...

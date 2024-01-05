@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Joining the Roleplay" id="Joining-the-Roleplay">
+
+    <p>
+        The first thing to do when starting to use sparkles! with an existing roleplay,
+        is making sure that all of your characters have successfully been synced and migrated over from your existing solution.
+    </p>
+
+    <chapter title="Before you start" id="before">
+        <p>Make sure you are signed into both Discord and the sparkles! dashboard.</p>
+        <p>You can verify you are properly signed in by visiting <a href="https://sparklesbot.com/login/user">sparklesbot.com</a> and going through the login flow.
+        This will make sure that Discord has been properly authorised and your sparkles! dashboard has access to your Discord account.</p>
+    </chapter>
+
+    <chapter title="How to perform a task" id="how-to">
+        <p>
+            Avoid writing procedures that are longer than 5 steps to keep it simple.
+            If the title of a procedure repeats the chapter title,
+            consider dropping the 'title' attribute of the procedure.
+        </p>
+
+        <procedure title="How to title" id="steps-sequence">
+            <step>
+                <p>Step with a code block.</p>
+
+                <code-block lang="plain text">
+                    Hello, world!
+                </code-block>
+            </step>
+
+            <step>
+                Step with a <a href="https://www.jetbrains.com">link</a>.
+            </step>
+
+            <step>
+                <p>Step with a list.</p>
+
+                <list>
+                    <li>
+                        <p>List item.</p>
+                    </li>
+                    <li>
+                        <p>List item.</p>
+                    </li>
+                    <li>
+                        <p>List item.</p>
+                    </li>
+                </list>
+            </step>
+        </procedure>
+    </chapter>
+</topic>
