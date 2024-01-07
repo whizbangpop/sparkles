@@ -16,41 +16,69 @@
         This will make sure that Discord has been properly authorised and your sparkles! dashboard has access to your Discord account.</p>
     </chapter>
 
-    <chapter title="How to perform a task" id="how-to">
-        <p>
-            Avoid writing procedures that are longer than 5 steps to keep it simple.
-            If the title of a procedure repeats the chapter title,
-            consider dropping the 'title' attribute of the procedure.
-        </p>
+    <note>
+        <p><control>Roleplay Limit</control></p>
+        <p>To help reduce redundant data as well as spam, a limit of 40 roleplays per user has been introduced. This count is global, and counts towards all roleplays you are part of.</p>
+        <p>The only time this doesn't count is if a server has a <a href="https://sparklesbot.com/ultimate">sparkles! Ultimate subscription</a> or a <a href="https://sparklesbot.com/sparklesync">SparkleSync subscription</a>. In this case, roleplays you are part of that are linked to that server will not be counted.</p>
+    </note>
 
-        <procedure title="How to title" id="steps-sequence">
-            <step>
-                <p>Step with a code block.</p>
+    <chapter title="Joining a roleplay" id="joininh">
+        <p>So, before you can crack on with your roleplaying adventures, you need to join each roleplay.
+            To keep it short, this is done to make it easier for roleplay admins to keeps lots of roleplays in one server,
+            and invite users to each roleplay, rather to a new server each time.</p>
+        <p>If you have any questions, hit up your roleplay admin, they should have answers to most questions - or hit someone up in the <a href="https://dsc.gg/sparkles_support" >support server.</a> There you can get help with any issues or queries.</p>
 
-                <code-block lang="plain text">
-                    Hello, world!
-                </code-block>
-            </step>
+        <chapter title="SparkleSync (Alpha)" id="sparklesync">
+            <note>
+                <p><control>Heads up!</control></p>
+                <p>
+                    This feature is still in alpha and may still have bugs or issues.
+                </p>
+            </note>
 
-            <step>
-                Step with a <a href="https://www.jetbrains.com">link</a>.
-            </step>
+            <p>If your roleplay admin has setup SparkleSync, theres nothing for you to do!
+                You'll know if they have done this as you will be shown a new modal with a brief summary of what SparkleSync is, and you need to do.</p>
+            <p>You can skip this entire page if your admin has setup SparkleSync as you should already have access to all of your roleplays. Contact your admin if some roleplays are missing, this might mean something wasn't setup correctly.</p>
+        </chapter>
 
-            <step>
-                <p>Step with a list.</p>
+        <chapter title="Joining with an Invite Link" id="joining_with_an_invite_link">
+            <p>The easiest way to join a roleplay (without using SparkleSync) is using an invite link.</p>
+            <p>These links are issued per user, per roleplay. So keep this in mind if you are part of a lot of roleplays - there might be a lot of link clicking.</p>
 
-                <list>
-                    <li>
-                        <p>List item.</p>
-                    </li>
-                    <li>
-                        <p>List item.</p>
-                    </li>
-                    <li>
-                        <p>List item.</p>
-                    </li>
-                </list>
-            </step>
-        </procedure>
+            <tip>
+                <p><control>Speedy Tip!</control></p>
+                <p>If you are part of 5+ roleplays, we recommend asking your admin for a list of <a href="#joining_with_an_invite_code" >invite codes</a>, rather than links, as you can paste them into the bulk importer tool.</p>
+            </tip>
+
+            <p>A standard sparkles! invite link will look like: <code>https://sparklesbot.com/invite/AbCd0123</code>.</p>
+            <p>If you receive any link not coming from <code>https://sparklesbot.com</code> or <code>https://sparklesbot.cc</code>, it is likely a fake, spam, scam or phishing link and should not be trusted. These can be sent to us for investigation and takedown at <a href="mailto:hello@sparklesbot.com?subject=Suspicious sparkles! invite: ">hello@sparklesbot.com</a></p>
+        </chapter>
+
+        <chapter title="Joining with an Invite Code" id="joining_with_an_invite_code">
+            <procedure title="Bulk Joining Roleplays" id="bulk_joining_roleplays" type="steps">
+                <warning>
+                    <p><control>Ratelimit Warning</control></p>
+                    <p>To reduce strain on our API, there are restrictions to bulk joining roleplays.</p>
+                    <list>
+                        <li>Bulk join requests can only be performed every 12 to 24 hours.</li>
+                        <li>There is a cap of 15 roleplays that can be added at one time.</li>
+                    </list>
+                </warning>
+
+                <step>Ask your admin for a list of invite codes</step>
+                <step>Goto <a href="https://sparklesbot.com/invite/bulk/import">sparklesbot.com/invite/bulk/import/</a> and reauthorize your Discord account</step>
+                <step>Complete the CAPTCHA (this is to prevent API abuse)</step>
+                <step>Copy the list of invite codes and paste into the text area
+                    <note>
+                        <p>Make sure only the invite codes are in the pasted text. You will get an error if not.</p>
+                    </note>
+                </step>
+                <step>Submit invite codes</step>
+
+                <p>At this point, a loading screen will appear. While you can leave the screen at this point, we recommend staying until completed as errors will show up here.</p>
+                <p>This process can take between 30 seconds and 5 minutes depending on how many roleplays are to be imported, and how many characters you have (if they were imported).</p>
+                </procedure>
+        </chapter>
+
     </chapter>
 </topic>

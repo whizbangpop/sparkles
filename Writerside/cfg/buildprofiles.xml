@@ -2,13 +2,18 @@
 <buildprofiles xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/build-profiles.xsd"
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
-    <variables></variables>
+    <variables>
+        <primary-color>halloween</primary-color>
+        <download-title>Add sparkles! ✨</download-title>
+        <download-page>https://dsc.gg/sparkles-support</download-page>
+        <showDownloadButton>true</showDownloadButton>
+    </variables>
     <build-profile instance="in">
         <variables>
             <noindex-content>false</noindex-content>
         </variables>
     </build-profile>
-    <build-profile instance="sd">
+    <build-profile instance="sad">
         <variables>
             <noindex-content>true</noindex-content>
         </variables>
@@ -18,5 +23,13 @@
             <noindex-content>false</noindex-content>
         </variables>
     </build-profile>
+    <footer>
+        <copyright>sparkles! 2024 | Code is released under Mozilla Public License 2.0</copyright>
+        <social type="email" href="hello@sparklesbot.com"></social>
+        <social type="twitter" href="https://twitter.com/sparklesbot"></social>
+        <link href="https://sparklesbot.com/terms">Terms of Service</link>
+        <link href="https://sparklesbot.com/privacy">Privacy Policy</link>
+        <link href="https://sparklesbot.com/easyread">ToS & Privacy Easy Read</link>
+    </footer>
 
 </buildprofiles>

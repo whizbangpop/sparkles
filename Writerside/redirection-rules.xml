@@ -14,4 +14,12 @@
         <description>Created after removal of "Joining an Existing Roleplay" from sparkles! User Guide</description>
         <accepts>Joining-an-Existing-Roleplay.html</accepts>
     </rule>
+    <rule id="5ce1871">
+        <description>Created after removal of "Starter" from sparkles! User Guide</description>
+        <accepts>Starter.html</accepts>
+    </rule>
+    <rule id="7ecdca88">
+        <description>Created after removal of "How to" from sparkles! User Guide</description>
+        <accepts>How-to1.html</accepts>
+    </rule>
 </rules>
