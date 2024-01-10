@@ -2,6 +2,9 @@ sparkles! ✨ - The Penultimate Roleplay Backup Bot
 
 (C) Abigail Henderson & contributors 2024
 
+[![Build documentation](https://github.com/whizbangpop/sparkles/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/whizbangpop/sparkles/actions/workflows/deploy.yml)
+[![CodeQL](https://github.com/whizbangpop/sparkles/actions/workflows/codeql.yml/badge.svg)](https://github.com/whizbangpop/sparkles/actions/workflows/codeql.yml)
+
 ## Why?
 Because when a friend of mine nearly deleted an entire roleplay, I wanted to make sure that no more were ever lost again. So, I started a line of bots - of which sparkles! is the latest and greatest.
 
