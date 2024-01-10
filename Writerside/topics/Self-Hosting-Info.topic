@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Self Hosting Info" id="Self-Hosting-Info">
+
+    <p>
+        %name% is <format style="bold">not</format> designed to be self hosted. While all of the code is open source, and even with this guide,
+        %name% is not designed to be hosted by individual users.
+    </p>
+    <p>
+        Feel free to follow along with this guide, to help with development or to self host, but please keep in mind no support will be given
+        even with a %sub% or SparkleSync subscription.
+    </p>
+
+    <chapter title="Setup Guide Outline" id="setup-guide-outline">
+        <p>In this tutorial, we will cover the following:</p>
+        <list>
+            <li>Downloading and compiling the source code</li>
+            <li>Configuring %name% and supporting infrastructure</li>
+            <li>Deploying %name% to a server</li>
+        </list>
+    </chapter>
+
+    <chapter title="Before you start" id="before-you-start">
+        <p>
+            Please make sure you have the following before getting started
+        </p>
+
+        <list>
+            <li>Solid & confident knowledge of TypeScript, JavaScript, Redis, SQL, Mongo, DiscordJS & Linux</li>
+            <li>A somewhat powerful computer or server that can run 24/7</li>
+            <li>Git, NodeJS & Bun installed</li>
+            <li>A MySQL database</li>
+            <li>A Redis database</li>
+            <li>A Mongo database</li>
+        </list>
+
+        <note>
+            <p>The database servers can be self hosted, or run by a dedicated provider. Just make sure that the database can be accessed either way, and stay up 24/7.</p>
+            <p>For anything that isn't development and testing, we recommend using a hosted provider.</p>
+        </note>
+
+        <p>Make sure you also have accounts setup with the following platforms and services:</p>
+        <list>
+            <li>Discord</li>
+            <li>Papertrail/SolarWinds</li>
+            <li>GitHub (if contributing)</li>
+        </list>
+
+        <p>While the following are optional, they are recommended:</p>
+        <list>
+            <li>A Redis Cloud account</li>
+            <li>A MongoDB Atlas account</li>
+        </list>
+    </chapter>
+
+    <chapter title="Part 1 - Pulling the Source Code" id="part-one">
+        <p>
+            Pull the latest source code from GitHub, install and compile.
+        </p>
+
+        <procedure>
+            <step>
+                <p>Pull the latest version of sparkles! with the following command:</p>
+
+                <code-block lang="bash">
+                    git pull https://github.com/whizbangpop/sparkles
+                </code-block>
+            </step>
+
+            <step>
+                <shortcut>cd</shortcut> into the newly downloaded directory (should be "sparkles/")
+            </step>
+
+            <step>
+                Install all dependencies using Bun with the following command:
+                <code-block lang="bash">
+                    bun install
+                </code-block>
+            </step>
+
+            <step>
+                Install the required global dependancies with the following command:
+                <code-block lang="bash">
+                    npm install --global nodemon typescript @types/node @types/bun
+                </code-block>
+            </step>
+
+            <step>
+                Compile the TypeScript into JavaScript with the following command:
+                <code-block lang="bash">
+                    bun run build
+                </code-block>
+            </step>
+            <p>If all is successful, you should now have a <shortcut>dist/</shortcut> directory avaliable. There should be no output from this command.</p>
+        </procedure>
+    </chapter>
+
+    <chapter title="Part 2 - Configuration" id="part-two">
+        <p>Here we will configure the services required for %name% to work:</p>
+
+        <procedure title="Discord">
+            <step>
+                Goto <a href="https://discord.dev">https://discord.dev/</a> and login with Discord.
+            </step>
+            <step>
+                Click on <ui-path>Applications</ui-path> in the sidebar, then <ui-path>Create Application</ui-path> and give your app a name, and add to a team if need be.
+            </step>
+            <step>
+                In the newly opened page, head down to <ui-path>Bot</ui-path> and click on <ui-path>Regenerate Token</ui-path>. You may need to enter a 2FA code at this point.
+            </step>
+            <step>
+                Copy the newly generated token, and paste it into the config.toml file under <ui-path>Discord > Token</ui-path>.
+            </step>
+            <step>
+                Head to <ui-path>OAuth2 > General</ui-path>, and copy the Client ID and paste it into <ui-path>Discord > ApplicationId</ui-path>.
+            </step>
+            <step>
+                Make sure to also specify a prefix for any text commands under <ui-path>Discord > Prefix</ui-path>.
+            </step>
+        </procedure>
+        <procedure title="Papertrail" id="papertrail">
+            <step>
+                1
+            </step>
+            <step>
+                2
+            </step>
+            <step>
+                3
+            </step>
+        </procedure>
+    </chapter>
+
+    <chapter title="What you've learned" id="what-learned">
+        <p>Summarize what the reader achieved by completing this tutorial.</p>
+    </chapter>
+
+    <seealso>
+        <!--Give some related links to how-to articles-->
+    </seealso>
+</topic>

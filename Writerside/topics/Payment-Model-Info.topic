@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Payment Model &amp; Info" id="Payment-Model-Info">
+
+    <p>
+        To allow for the upkeep of sparkles!, after a certain threshold, you and/or your server members will need to pay for either a %sub1% or purchase credit packs to continue backing up messages.
+        The message proxying service will always be free.
+    </p>
+
+    <chapter title="Free Tier Limits" id="overview-chapter" >
+        <p>To help you get started, when setting up your admin account, you will be automatically given 250 (ST) credits. You can either keep these for yourself to test sparkles!, or transfer them to a server.</p>
+        <warning>
+            <p>Once transferred to a server, they cannot be taken out of the server pot by anyone.</p>
+        </warning>
+        <p>Each message sent or edited will use 1 credit. With free tier credits, they cannot be refunded in any way. Purchased credits may be refunded if unused.</p>
+        <p>Once these have been used, you will need to either purchase more credits, or get a %sub% subscription.</p>
+    </chapter>
+    <chapter title="Purchasable Credits" id="purchasable-credits">
+        <chapter title="Credit Packs" id="credit_packs">
+            When buying credits, you choose a credit pack to buy. These packs come in the following sizes:
+            50, 100, 250, 500.
+            <tip>
+                <p><control>Money Hack</control></p>
+                <p>If you need more than 500 messages, a %sub1% will be better value. </p>
+            </tip>
+            Once bought, they will be credited to your account. You can choose to either keep them in your account, or transfer them to a server pot or another user.
+        </chapter>
+        <chapter title="The Server Pot" id="the_server_pot">
+            As mentioned earlier, each server sparkles! has been setup in has a communal server pot. Any user in a roleplay can use these credits, so be careful who you add.
+            <procedure title="Reporting Credit Abuse" id="reporting_credit_abuse" type="steps">
+                <p>If someone has misused your credits, you may be able to request an investigation. If found to be abusive, these messgaes will be deleted and credits refunded.</p>
+                <p>Just reporting abuse or an investigation being opened <format style="bold">does not</format> guarantee funds being recovered.</p>
+                <step>Goto <a href="https://support.sparklesbot.cc/open/abusive-credit-use">https://support.sparklesbot.cc/open/abusive-credit-use</a></step>
+                <step>Fill in all relevant information. Please do not skip any fields that are not relevant. Missing these could lead to your case being ignored.</step>
+                <step>Submit your case. Someone should respond within 72 hours (working week - UK hours).</step>
+
+                <p>While waiting for a response, consider locking credit use by running the command <shortcut>/lockout</shortcut> in your control channel.</p>
+                <p>You may also be asked to provide your passphrase in cases where we need to read messages. Though, this is very rare and only needed in exceptional circumstances. More info will be outlined if this is required.</p>
+            </procedure>
+        </chapter>
+    </chapter>
+    <chapter title="%sub% Subscription" id="_sub_subscription">
+
+    </chapter>
+    <chapter title="Glossary" id="glossary">
+        <p>Here is a breakdown of terms used in this article:</p>
+        <deflist>
+            <def title="Credit">
+                Each message or edit stored in our database uses 1 credit. These are non-refundable once used, even if the message or backup is deleted.
+            </def>
+            <def title="(ST) Credits">
+                Server Transferable Credits. These are credits which can only be transferred to a server pot. I.e. they cannot be given to another user.
+            </def>
+            <def title="Server Pot">
+                This is the collective pot of credits that sparkles! will take from for each message backed up. Credits cannot be removed from the pot by anyone, including whoever bought them.
+            </def>
+        </deflist>
+    </chapter>
+</topic>

@@ -6,4 +6,6 @@
                   name="sparkles! Admin Docs" start-page="Welcome.md">
 
     <toc-element topic="Welcome.md"/>
+    <toc-element topic="Payment-Model-Info.topic"/>
+    <toc-element topic="Self-Hosting-Info.topic"/>
 </instance-profile>

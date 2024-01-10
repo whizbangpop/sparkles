@@ -2,4 +2,7 @@
 <!DOCTYPE vars SYSTEM "https://resources.jetbrains.com/writerside/1.0/vars.dtd">
 <vars>
     <var name="product" value="Writerside"/>
+    <var name="name" value="sparkles!"/>
+    <var name="sub" value="sparkles! Ultimate"/>
+    <var name="sub1" value="sparkles! Ultimate subscription"/>
 </vars>

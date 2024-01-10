@@ -22,4 +22,8 @@
         <description>Created after removal of "How to" from sparkles! User Guide</description>
         <accepts>How-to1.html</accepts>
     </rule>
+    <rule id="38bff9ed">
+        <description>Created after removal of "Section Starting Page" from sparkles! Admin Docs</description>
+        <accepts>Section-Starting-Page.html</accepts>
+    </rule>
 </rules>
