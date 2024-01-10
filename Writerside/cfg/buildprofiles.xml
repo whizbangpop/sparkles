@@ -15,7 +15,7 @@
     </build-profile>
     <build-profile instance="sad">
         <variables>
-            <noindex-content>true</noindex-content>
+            <noindex-content>false</noindex-content>
         </variables>
     </build-profile>
     <build-profile instance="sug">
