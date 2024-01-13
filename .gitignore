@@ -136,4 +136,3 @@ dist/discord/config.yaml
 .vscode/
 logs/
 /config.toml
-/discord/rp_proxy/EncryptionKeys/

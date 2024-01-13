@@ -7,8 +7,7 @@
                  start-page="sparkles-user-guide.md">
 
     <toc-element topic="sparkles-user-guide.md"/>
-    <toc-element topic="Empty-MD-Topic.md">
+    <toc-element toc-title="Getting Started">
         <toc-element topic="Joining-the-Roleplay.topic"/>
     </toc-element>
-    <toc-element topic="How-to.topic"/>
 </instance-profile>
