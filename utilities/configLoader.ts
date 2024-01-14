@@ -3,7 +3,7 @@ import * as toml from '@iarna/toml';
 import path from "node:path";
 import {CreateLogger} from "./createLogger";
 
-const Logger = CreateLogger("discord", "sharding");
+// const Logger = CreateLogger("discord", "sharding");
 
 interface AppConfig {
     Discord: {
@@ -61,7 +61,7 @@ function validateConfig(config: Partial<AppConfig>): config is AppConfig {
 
 // Validate the config
 if (validateConfig(config)) {
-    Logger.debug('Config is valid')
+    console.debug('Config is valid')
 } else {
     console.error('Invalid config. Please check the TOML file.');
 }

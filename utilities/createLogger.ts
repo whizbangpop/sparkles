@@ -1,10 +1,13 @@
 import winston from "winston";
 import {Syslog} from "winston-syslog";
+import LoadConfig from "./configLoader";
+
+const Config = LoadConfig;
 
 export function CreateLogger(parentName: string, moduleName: string) {
 	const papertrail = new Syslog({
-		host: "logs6.papertrailapp.com",
-		port: 39932,
+		host: Config.Papertrail.ConnectionURL,
+		port: Config.Papertrail.ConnectionPort,
 		protocol: "tls4",
 		localhost: "sparkles-runner-1",
 		eol: "\n",
