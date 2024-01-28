@@ -31,14 +31,14 @@
         <list>
             <li>Solid & confident knowledge of TypeScript, JavaScript, Redis, SQL, Mongo, DiscordJS & Linux</li>
             <li>A somewhat powerful computer or server that can run 24/7</li>
-            <li>Git, NodeJS & Bun installed</li>
+            <li>Git & NodeJS Installed</li>
             <li>A MySQL database</li>
             <li>A Redis database</li>
             <li>A Mongo database</li>
         </list>
 
         <note>
-            <p>The database servers can be self hosted, or run by a dedicated provider. Just make sure that the database can be accessed either way, and stay up 24/7.</p>
+            <p>The database servers can be self-hosted, or run by a dedicated provider. Just make sure that the database can be accessed either way, and stay up 24/7.</p>
             <p>For anything that isn't development and testing, we recommend using a hosted provider.</p>
         </note>
 
@@ -123,14 +123,47 @@
         </procedure>
         <procedure title="Papertrail" id="papertrail">
             <step>
-                1
+                Sign up for a free tier Papertrail account through SolarWinds
             </step>
             <step>
-                2
+                On the <shortcut>Setup Logging</shortcut> page, goto <ui-path>Settings > Log Destinations</ui-path>
             </step>
             <step>
-                3
+                Click on the <ui-path>"Create Log Destination"</ui-path> button.
+                Give it a useful description, so you remember what it does.
+                Also make sure that <shortcut>Allow unknown systems</shortcut> is enabled.
             </step>
+            <step>
+                Scroll down to the bottom of the page, and change the connection type to Port,
+                and make sure that <shortcut>TCP/TLS Encryption</shortcut> and <shortcut>UDP/Plain Text</shortcut> are both enabled.
+            </step>
+            <step>
+                Hit the create button and let Papertrail work its magic.
+                Copy the URL portion of the output into <shortcut>ConnectionURL</shortcut> under PaperTrail.
+                Do the same thing but for the port under <shortcut>ConnectionPort</shortcut>.
+            </step>
+        </procedure>
+        <procedure title="Databases" id="databases">
+            <p>Just copy and paste the relevant details and creds into the config file. Doesn't matter what the username and password are, just make sure to specify them.</p>
+        </procedure>
+    </chapter>
+
+    <chapter title="Part 3 - Compiling & Running Source Code" id="part_3_compiling_source_code">
+        <p>Goto your console, making sure to be in the root directory and run the following commands:</p>
+        <code-block lang="console">
+            npm install
+            npm run build
+        </code-block>
+        <p>At this point, a new <shortcut>dist/</shortcut> folder should have been created.</p>
+        <p>Copy the <shortcut>config.toml</shortcut> from your directory root into the new <shortcut>dist/</shortcut> folder.</p>
+
+    </chapter>
+
+    <chapter title="Part 3.5 - Cleaning Up" id="part_3_5_cleaning_up">
+        <procedure title="Securing Papertrail" id="securing_papertrail">
+            <step>Head back to your Papertrail dashboard and goto <ui-path>Settings > Log Destinations</ui-path></step>
+            <step>Select <shortcut>Edit</shortcut> on the log destination you created</step>
+            <step>Change <shortcut>Allow unknown systems</shortcut> to be false to prevent unknown users from accessing your log endpoint.</step>
         </procedure>
     </chapter>
 
@@ -139,6 +172,9 @@
     </chapter>
 
     <seealso>
-        <!--Give some related links to how-to articles-->
+        <category ref="external">
+            <a href="https://discord.dev">Discord Developer Portal</a>
+            <a href="https://papertrailapp.com">Papertrail</a>
+        </category>
     </seealso>
 </topic>
