@@ -1,4 +1,4 @@
-import {CreateLogger} from "./createLogger";
+import {CreateLogger} from "./CreateLogger";
 
 const ClientLogger = CreateLogger("utils", "handy");
 

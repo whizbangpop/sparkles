@@ -1,7 +1,6 @@
 import * as fs from 'fs';
 import * as toml from '@iarna/toml';
 import path from "node:path";
-import {CreateLogger} from "./createLogger";
 
 // const Logger = CreateLogger("discord", "sharding");
 

@@ -1,13 +1,13 @@
 import {Command} from "../core/interfaces/Command";
 import {SlashCommandBuilder} from "@discordjs/builders";
-import {generateRSAKeys, loadPublicKey} from "../rp_proxy/EncryptionKeys/KeyHandler";
+import {generateRSAKeys, loadPublicKey} from "../rp_proxy/KeyHandlers/KeyHandler";
 import {ChatInputCommandInteraction, EmbedBuilder} from "discord.js";
 import path from "path";
 import fs from "fs";
 import axios from "axios";
-import {CreateLogger} from "../../utilities/createLogger";
+import {CreateLogger} from "../../utilities/CreateLogger";
 
-const FormData = require('form-data');
+import FormData from 'form-data';
 
 const ClientLogger = CreateLogger("commands", "generate_keys");
 

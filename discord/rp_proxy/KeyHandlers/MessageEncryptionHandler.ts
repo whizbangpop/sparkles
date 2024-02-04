@@ -1,4 +1,4 @@
-import {CreateLogger} from "../../../utilities/createLogger";
+import {CreateLogger} from "../../../utilities/CreateLogger";
 import {loadPrivateKey, loadPublicKey} from "./KeyHandler";
 import * as crypto from 'crypto';
 import {ClearableMap} from "../../../utilities/HandyTypes";

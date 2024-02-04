@@ -1,8 +1,8 @@
-import {Client, Events, GatewayIntentBits, Routes} from "discord.js";
-import {CreateLogger} from "../../utilities/createLogger";
+import {Client, Events, GatewayIntentBits, Routes} from "npm:discord.js";
+import {CreateLogger} from "../../utilities/CreateLogger.ts";
 import {createClient} from "redis";
-import {ToadScheduler, Task, SimpleIntervalJob} from "toad-scheduler";
-import axios from "axios";
+import {ToadScheduler, Task, SimpleIntervalJob} from "npm:toad-scheduler";
+import axios from "npm:axios";
 
 import CommandHandler from "./listeners/CommandHandler";
 import MessageWatcher from "../rp_proxy/MessageWatcher";
@@ -24,7 +24,8 @@ const ClientApp = new Client({
 });
 
 const ClientLogger = CreateLogger("discord", "client");
-import Config from '../../utilities/configLoader';
+import Config from '../../utilities/ConfigLoader';
+// import DatabaseSyncService from "../rp_proxy/DatabaseSyncService";
 const Schedule = new ToadScheduler();
 
 ClientApp.once(Events.ClientReady, async (readyClient) => {
@@ -66,6 +67,12 @@ function ScheduleClean() {
     Schedule.stop();
 }
 
-const HeartbeatTask = new Task("oneuptime heartbeat", async () => { await axios.get("https://oneuptime.com/heartbeat/f051612b-d9af-4aa2-b232-05468bdf68e5") });
-const HeartbeatJob = new SimpleIntervalJob({ minutes: 5}, HeartbeatTask);
+const HeartbeatTask = new Task("oneuptime heartbeat", async () => {
+    await axios.get("https://oneuptime.com/heartbeat/f051612b-d9af-4aa2-b232-05468bdf68e5");
+    console.log("heartbeat")
+});
+const HeartbeatJob = new SimpleIntervalJob({seconds: 30}, HeartbeatTask);
 Schedule.addSimpleIntervalJob(HeartbeatJob);
+// const SyncTask = new Task("oneuptime heartbeat", async () => { await DatabaseSyncService(ClientApp) });
+// const SyncJob = new SimpleIntervalJob({ hours: 1 }, SyncTask);
+// Schedule.addSimpleIntervalJob(SyncJob);

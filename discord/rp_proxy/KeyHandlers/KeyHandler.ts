@@ -1,8 +1,8 @@
 import * as fs from 'fs';
 import * as crypto from 'crypto';
 import * as path from 'path';
-import {CreateLogger} from "../../../utilities/createLogger";
-import LoadConfig from "../../../utilities/configLoader";
+import {CreateLogger} from "../../../utilities/CreateLogger";
+import LoadConfig from "../../../utilities/ConfigLoader";
 
 const ClientLogger = CreateLogger("proxy", "key_handler");
 const Config = LoadConfig;
@@ -23,10 +23,10 @@ export function generateRSAKeys(guildId: string, passphrase: string): KeyPair {
     const CurrentDir = __dirname;
 
     const PublicKeyFileName = `publicKey_${guildId}.pem`;
-    const PublicKeyPath = path.join(CurrentDir, PublicKeyFileName);
+    const PublicKeyPath = path.join(CurrentDir, '..', 'EncryptionKeys', PublicKeyFileName);
 
     const PrivateKeyFileName = `privateKey_${guildId}.pem`;
-    const PrivateKeyPath = path.join(CurrentDir, PrivateKeyFileName);
+    const PrivateKeyPath = path.join(CurrentDir, '..', 'EncryptionKeys', PrivateKeyFileName);
 
     if (fs.existsSync(PublicKeyPath)) {
         const PublicKey = fs.readFileSync(PublicKeyPath, 'utf-8');
@@ -67,7 +67,7 @@ export function generateRSAKeys(guildId: string, passphrase: string): KeyPair {
 export function loadPublicKey(guildId: string): string | null {
     const CurrentDir = __dirname;
     const PublicKeyFileName = `publicKey_${guildId}.pem`;
-    const PublicKeyPath = path.join(CurrentDir, PublicKeyFileName);
+    const PublicKeyPath = path.join(CurrentDir, '..', 'EncryptionKeys', PublicKeyFileName);
 
     ClientLogger.debug(`Loading public key for ${guildId}`);
 
@@ -82,7 +82,7 @@ export function loadPublicKey(guildId: string): string | null {
 export function loadPrivateKey(guildId: string): string | null {
     const CurrentDir = __dirname;
     const PrivateKeyFileName = `privateKey_${guildId}.pem`;
-    const PrivateKeyPath = path.join(CurrentDir, PrivateKeyFileName);
+    const PrivateKeyPath = path.join(CurrentDir, '..', 'EncryptionKeys', PrivateKeyFileName);
 
     ClientLogger.debug(`Loading private key for ${guildId}`);
 

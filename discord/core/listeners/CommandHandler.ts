@@ -1,11 +1,11 @@
 import {Client, Collection, Interaction, SlashCommandBuilder} from "discord.js";
 import fs from "node:fs";
 import path from "node:path";
-import {CreateLogger} from "../../../utilities/createLogger";
+import {CreateLogger} from "../../../utilities/CreateLogger";
 import {CommandList} from "../../commands/_CommandList";
 
 const ClientLogger = CreateLogger("discord", "command_handler");
-import Config from '../../../utilities/configLoader';
+import Config from '../../../utilities/ConfigLoader.js';
 
 
 export default (ClientApp: Client): void => {

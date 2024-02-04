@@ -1,13 +1,19 @@
 import {Client, Message} from "discord.js";
-import {CreateLogger} from "../../utilities/createLogger";
-import {EncryptMessage} from "./EncryptionKeys/MessageEncryptionHandler";
+import {CreateLogger} from "../../utilities/CreateLogger";
+import {EncryptMessage} from "./KeyHandlers/MessageEncryptionHandler";
 
 const ClientLogger = CreateLogger("discord", "message_collector");
 const MessageTransport = CreateLogger("rp_proxy", "message_collector")
-import Config from '../../utilities/configLoader';
-import {KeyMap} from "./EncryptionKeys/MessageEncryptionHandler";
+import Config from '../../utilities/ConfigLoader';
+import {KeyMap} from "./KeyHandlers/MessageEncryptionHandler";
+import {createClient} from "redis";
 
-export default (ClientApp: Client): void => {
+
+export default async (ClientApp: Client) => {
+    const RedisClient = await createClient({url: `redis://${Config.Database.Redis.Username}:${Config.Database.Redis.Password}@${Config.Database.Redis.ConnectionURL}`})
+        .on("error", err => ClientLogger.error(`Unexpected error: ${err}`))
+        .connect();
+
     ClientLogger.debug("Starting rp_proxy message collector");
 
     ClientApp.on("messageCreate", async (Message: Message) => {
@@ -18,17 +24,14 @@ export default (ClientApp: Client): void => {
 
         if (Message.content === ".clearcache") return KeyMap.clearMap();
 
-        await Message.reply(`${Date.now() - Message.createdTimestamp}ms`)
-
         const NewMessage = EncryptMessage(Message.guild.id, Message.content);
         if (!NewMessage) return;
 
-        MessageTransport.debug(`${NewMessage}`, {
-            userId: Message.author.id,
-            guildId: Message.guild.id
+        await RedisClient.hSet(`${Message.id}`, {
+            message: NewMessage,
+            guildId: Message.guild.id,
+            userId: Message.author.id
         });
-
-        await Message.reply(`${Date.now() - Message.createdTimestamp}ms`)
 
         return;
     });

@@ -1,6 +1,6 @@
 import winston from "winston";
 import {Syslog} from "winston-syslog";
-import LoadConfig from "./configLoader";
+import LoadConfig from "./ConfigLoader";
 
 const Config = LoadConfig;
 

@@ -136,3 +136,6 @@ dist/discord/config.yaml
 .vscode/
 logs/
 /config.toml
+/database/redis/docker-compose.yml
+/database/mongo/docker-compose.yml
+
