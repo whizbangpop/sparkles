@@ -1,3 +1,6 @@
+# ARCHIVED
+Work for sparkles has moved to https://github.com/whizbangpop/sparkles-rewrite
+
 sparkles! ✨ - The Penultimate Roleplay Backup Bot
 
 (C) Abigail Henderson & contributors 2024
